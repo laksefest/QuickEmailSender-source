@@ -1,0 +1,9 @@
+﻿QuickEmailSender_history.json
+SapOrderReader_result.json
+bin/
+obj/
+*.bak
+*.backup
+*.png
+*.txt
+OldBackups/
