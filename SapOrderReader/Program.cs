@@ -76,32 +76,32 @@ public sealed class MainForm : Form
             // This prevents large/different orders from blocking navigation.
             statusLabel.Text = "Opening PSD...";
             await ActivatePsdAsync();
-            await Task.Delay(1200);
+            await Task.Delay(900);
 
             statusLabel.Text = "Finding Process ID ENDUSER...";
             int processY = await FindEnduserYAsync();
             MouseHelper.Click(SelectionMarginX, processY);
             await Task.Delay(350);
             await KeyboardNavigation.TabEnterAsync(2);
-            await Task.Delay(1400);
+            await Task.Delay(1100);
 
             statusLabel.Text = "Finding Items ENDUSER...";
             int itemY = await FindEnduserYAsync();
             MouseHelper.Click(SelectionMarginX, itemY);
             await Task.Delay(350);
             await KeyboardNavigation.TabEnterAsync(4);
-            await Task.Delay(1600);
+            await Task.Delay(1200);
 
             statusLabel.Text = "Copying Tenant and GroupTag...";
             Values values = await ReadValuesByKeyboardAsync();
 
             statusLabel.Text = "Returning to the order...";
             await KeyboardNavigation.TabEnterAsync(3);
-            await Task.Delay(1000);
+            await Task.Delay(800);
             await KeyboardNavigation.TabEnterAsync(5);
-            await Task.Delay(1000);
+            await Task.Delay(800);
             await KeyboardNavigation.TabEnterAsync(3);
-            await Task.Delay(1400);
+            await Task.Delay(1100);
 
             statusLabel.Text = "Reading Order Number and optional Qty...";
             OrderInfo order = await ReadOrderInfoAsync();

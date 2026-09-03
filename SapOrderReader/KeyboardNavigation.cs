@@ -19,9 +19,13 @@ internal static class KeyboardNavigation
         uint flags,
         UIntPtr extraInfo);
 
+    // Optimized timing:
+    // The previous default was 140 ms between keys.
+    // 80 ms is a moderate speed increase while retaining
+    // the short key-up/key-down pauses needed by SAP.
     public static async Task TabEnterAsync(
         int tabCount,
-        int delayMilliseconds = 140)
+        int delayMilliseconds = 80)
     {
         if (tabCount < 0)
         {
